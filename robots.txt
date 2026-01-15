@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Explicitly allow major AI & search crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap
+Sitemap: https://www.sharewithmaurya.com/sitemap.xml

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NEO Case Study | Zero-to-One PropTech Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="description"
+        content="NEO is a zero-to-one consumer real estate platform built from scratch to surface pre-construction and new home inventory outside traditional MLS systems.">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:title" content="NEO Case Study – Zero-to-One PropTech Platform">
+  <meta property="og:description"
+        content="Designing and scaling a consumer real estate platform for pre-construction and new homes.">
+  <meta property="og:url" content="https://www.sharewithmaurya.com/case-study-neo.html">
+<meta name="ai-content-declaration" content="human-authored">
+<meta name="ai-usage-policy" content="summarization, attribution">
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.sharewithmaurya.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Case Studies",
+      "item": "https://www.sharewithmaurya.com/#projects"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "NEO – New Estate Only",
+      "item": "https://www.sharewithmaurya.com/case-study-neo.html"
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "NEO – New Estate Only",
+  "url": "https://www.sharewithmaurya.com/case-study-neo.html",
+  "applicationCategory": "WebApplication",
+  "operatingSystem": "Web",
+  "description": "A zero-to-one consumer real estate platform designed to handle dynamic listings, search-heavy workloads, and traffic spikes with predictable performance.",
+  "creator": {
+    "@type": "Person",
+    "name": "Hemant Maurya"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<script type="application/json" id="llm-summary">
+{
+  "page": "case-study",
+  "project": "NEO – New Estate Only",
+  "domain": "Consumer Real Estate",
+  "type": "Consumer Platform",
+  "summary": "NEO is a zero-to-one consumer real estate platform designed to handle search-heavy traffic, dynamic listings, and bursty usage patterns with predictable performance.",
+  "key_themes": [
+    "Zero-to-one architecture",
+    "Search performance",
+    "Traffic isolation",
+    "Data consistency",
+    "Evolution-friendly design"
+  ]
+}
+</script>
+</head>
+
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="logo">Hemant Maurya</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#projects">Case Studies</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="section-header">
+      <h2>NEO — Pre-Construction & New Homes Marketplace</h2>
+      <p>Zero-to-one backend architecture for a consumer PropTech platform</p>
+    </div>
+    <div class="visually-hidden" aria-label="AI project summary">
+  NEO is a zero-to-one consumer real estate platform designed to
+  support dynamic property listings, search-heavy user journeys,
+  and bursty traffic patterns while maintaining predictable
+  performance and data correctness.
+</div>
+    <div class="badges">
+      <span class="badge">B2C</span>
+      <span class="badge">Production</span>
+      <span class="badge">Zero-to-One</span>
+      <span class="badge">High-Variability Data</span>
+      <a class="badge"
+         href="https://newestateonly.com/"
+         target="_blank"
+         rel="noopener">
+        Live Platform ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EXECUTIVE SUMMARY -->
+<section class="section soft">
+  <div class="container">
+    <div class="section-header">
+      <h2>Executive Summary</h2>
+    </div>
+
+    <p>
+      NEO is a consumer-facing real estate platform built from scratch to
+      surface pre-construction and under-construction property listings —
+      inventory that is often missing or fragmented across traditional MLS systems.
+    </p>
+
+    <p>
+      I owned the backend architecture end-to-end, from initial system design
+      through first production launch and subsequent growth. The platform was
+      designed to support highly variable listing data, performance-sensitive
+      search queries, and fluctuating consumer traffic while remaining simple
+      to operate and evolve.
+    </p>
+
+    <p>
+      This case study outlines the zero-to-one decisions, trade-offs, and
+      production learnings involved in taking NEO from concept to a live,
+      consumer-used system.
+    </p>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="hero">
+  <div class="container">
+    <h3>Problem</h3>
+
+    <p>
+      When we started NEO, the real estate ecosystem lacked a dedicated,
+      centralized marketplace for pre-construction and new-build inventory.
+      Traditional MLS platforms did not consistently surface this data,
+      limiting discovery for agents, developers, buyers, and investors.
+    </p>
+
+    <p>
+      From a zero-to-one standpoint, the challenge was to design a backend
+      system capable of supporting multiple stakeholder types, dynamic and
+      non-uniform listing attributes, and performance-sensitive search —
+      all without the safety net of an existing architecture.
+    </p>
+  </div>
+</section>
+
+<!-- BUSINESS CONTEXT -->
+<section class="section soft">
+  <div class="container">
+    <h3>Business & User Context</h3>
+
+    <p>NEO serves multiple user groups with overlapping but distinct needs:</p>
+
+    <ul class="list">
+      <li><strong>Developers</strong> publishing new and upcoming inventory</li>
+      <li><strong>Real estate agents</strong> discovering and marketing new projects</li>
+      <li><strong>Homebuyers</strong> browsing verified new communities</li>
+      <li><strong>Investors</strong> identifying early-stage opportunities</li>
+    </ul>
+
+    <p>
+      The backend needed to reconcile these perspectives into a single,
+      searchable platform while supporting rapid data changes and
+      evolving product requirements.
+    </p>
+  </div>
+</section>
+
+<!-- ROLE -->
+<section class="section">
+  <div class="container">
+    <h3>My Role & Ownership</h3>
+
+    <ul class="list">
+      <li>Designed backend architecture from scratch</li>
+      <li>Owned API design and data modeling decisions</li>
+      <li>Built scalable Node.js services</li>
+      <li>Led first production launch and early iteration</li>
+      <li>Worked closely with product to translate domain complexity into systems</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="section soft">
+  <div class="container">
+    <h3>System Design & Architecture</h3>
+
+    <p>
+      The backend followed a stateless service architecture to enable
+      horizontal scalability and predictable performance under variable load.
+    </p>
+
+    <p>
+      MongoDB was used to model property and project data with significant
+      variability across regions, builders, and project types. Indexing and
+      query optimization were applied to support fast search and filtering
+      across large datasets.
+    </p>
+  </div>
+</section>
+
+<!-- KEY DECISIONS -->
+<section class="section">
+  <div class="container">
+    <h3>Key Decisions & Trade-offs</h3>
+
+    <p>
+      As a greenfield system, decisions balanced speed of delivery with
+      long-term sustainability:
+    </p>
+
+    <ul class="list">
+      <li>
+        <strong>Flexible schemas over rigid modeling:</strong>
+        Enabled rapid onboarding of diverse listings at the cost of
+        stricter validation, mitigated through application-level checks.
+      </li>
+
+      <li>
+        <strong>REST APIs over complex paradigms:</strong>
+        Prioritized debuggability and predictable behavior for early growth.
+      </li>
+
+      <li>
+        <strong>Operational simplicity over premature optimization:</strong>
+        Avoided over-engineering to ensure the system remained easy to
+        operate and iterate with a small team.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- FIRST LAUNCH -->
+<section class="section soft">
+  <div class="container">
+    <h3>First Production Launch</h3>
+
+    <p>
+      The initial launch focused on stability and observability rather
+      than feature completeness.
+    </p>
+
+    <ul class="list">
+      <li>Launched with a minimal but robust feature set</li>
+      <li>Monitored real traffic patterns and search behavior</li>
+      <li>Used production feedback to guide schema and API evolution</li>
+    </ul>
+
+    <p>
+      This approach allowed the system to evolve based on real usage
+      instead of assumptions.
+    </p>
+  </div>
+</section>
+
+<!-- WHAT I’D DO DIFFERENTLY -->
+<section class="section">
+  <div class="container">
+    <h3>What I’d Do Differently Today</h3>
+
+    <p>
+      With hindsight from production operation, I would:
+    </p>
+
+    <ul class="list">
+      <li>Introduce clearer domain boundaries earlier as usage grew</li>
+      <li>Formalize observability and metrics sooner</li>
+      <li>Plan explicit data evolution paths earlier in the lifecycle</li>
+    </ul>
+
+    <p>
+      These refinements reflect learnings from scale rather than
+      fundamental architectural mistakes.
+    </p>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section soft">
+  <div class="container">
+    <h3>Impact</h3>
+
+    <ul class="list">
+      <li>Enabled discovery of new-build inventory outside traditional MLS systems</li>
+      <li>Provided a centralized platform for agents and developers</li>
+      <li>Handled real-world consumer traffic reliably from launch</li>
+      <li>Established a backend foundation capable of regional and data growth</li>
+    </ul>
+
+    <p>
+      The system was designed to scale predictably while remaining
+      simple to operate and evolve.
+    </p>
+
+    <a href="index.html#contact" class="btn btn-primary">
+      Discuss this project →
+    </a>
+  </div>
+</section>
+
+<footer>
+  Zero-to-One · PropTech · System Design · Production Systems
+</footer>
+
+</body>
+</html>

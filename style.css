@@ -1,0 +1,379 @@
+/* =========================================================
+   DESIGN TOKENS
+========================================================= */
+:root {
+  --bg-main: #ffffff;
+  --bg-soft: #f8fafc;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+
+  --border-light: #e2e8f0;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+}
+
+/* =========================================================
+   RESET & BASE
+========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.65;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================
+   SKIP LINK (ACCESSIBILITY)
+========================================================= */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #ffffff;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  z-index: 1000;
+}
+
+.skip-link:focus-visible {
+  left: 16px;
+  top: 16px;
+}
+
+/* =========================================================
+   LINKS (TEXT ONLY)
+========================================================= */
+a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:not(.btn):hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section.soft {
+  background: var(--bg-soft);
+}
+
+/* =========================================================
+   SECTION HEADERS (MICRO MOTION)
+========================================================= */
+.section-header {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  position: relative;
+  transition: transform 160ms ease;
+}
+
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 36px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.25;
+  transition: width 160ms ease, opacity 160ms ease;
+}
+
+.section:hover .section-header h2,
+.section:focus-within .section-header h2 {
+  transform: translateY(-1px);
+}
+
+.section:hover .section-header h2::after,
+.section:focus-within .section-header h2::after {
+  width: 56px;
+  opacity: 0.45;
+}
+
+.section-header p {
+  font-size: 17px;
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-inner a {
+  margin-left: 20px;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.nav-inner a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 160ms ease;
+}
+
+.nav-inner a:hover,
+.nav-inner a:focus-visible {
+  color: var(--text-primary);
+}
+
+.nav-inner a:hover::after,
+.nav-inner a:focus-visible::after {
+  width: 100%;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero {
+  padding: 120px 0;
+}
+
+.hero h1 {
+  font-size: 48px;
+  max-width: 720px;
+}
+
+.hero p {
+  max-width: 720px;
+  font-size: 18px;
+  margin-top: 16px;
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* PRIMARY */
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+/* SECONDARY */
+.btn-secondary {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================================================
+   GRID & CARDS
+========================================================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 28px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================================================
+   ACCESSIBILITY FOCUS
+========================================================= */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.28);
+  border-radius: 6px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+  border-top: 1px solid var(--border-light);
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+}
+/* =========================================================
+   BADGE SECTION – PROFESSIONAL POLISH
+========================================================= */
+
+/* Badge container */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Individual badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 999px;
+
+  background: #f8fafc;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+/* Hover (subtle emphasis, not button-like) */
+.badge:hover {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  color: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+}
+
+/* Clickable badges (like Live Platform) */
+.badge[href] {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Hover for clickable badge */
+.badge[href]:hover {
+  background: #e0e7ff;
+  border-color: #a5b4fc;
+  color: var(--accent-hover);
+}
+
+/* Focus-visible for keyboard users */
+.badge:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+/* AI-friendly hidden content (accessible, non-visual) */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
